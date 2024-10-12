@@ -1,0 +1,18 @@
+@import "./mixin.scss";
+
+.list-links-media {
+  @include respond-to(xs) {
+  }
+
+  @include respond-to(sm) {
+  }
+
+  @include respond-to(md) {
+  }
+
+  @include respond-to(lg) {
+  }
+
+  @include respond-to(xl) {
+  }
+}
