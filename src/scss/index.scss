@@ -1,5 +1,9 @@
-@import "./app.scss";
-@import "./classes.scss";
-@import "./media.scss";
-@import "./mixin.scss";
-@import "./header.scss";
+@import "./providers/app.scss";
+@import "./providers/mixin.scss";
+@import "./providers/classes.scss";
+@import "./providers/media.scss";
+@import "./layout/header.scss";
+@import "./layout/aside.scss";
+@import "./layout/sections.scss";
+@import "./layout/menu.scss";
+@import "./layout/animation.scss";

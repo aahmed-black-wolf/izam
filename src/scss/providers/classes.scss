@@ -1,0 +1,229 @@
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.v-divider {
+  width: 1px;
+  height: 60px;
+  background: $grey-color-900;
+}
+
+.h-divider {
+  width: 100%;
+  height: 1px;
+  background: $grey-color-900;
+}
+
+.button-bg-transparent {
+  background-color: transparent !important;
+  &:hover {
+    background-color: $light-color-600 !important;
+  }
+}
+
+.button-rest {
+  color: $dark-color-900 !important;
+  font-weight: 500 !important;
+  background-color: transparent !important;
+  &:hover {
+    background-color: $light-color-600 !important;
+  }
+}
+.my-xl {
+  margin: 20px 0;
+}
+.text-sm {
+  font-size: 14px;
+}
+// Container Styling
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-padding;
+  padding-left: $container-padding;
+
+  // Responsive Layout
+  @media (min-width: $breakpoint-xs) {
+    max-width: 100%;
+    padding-right: 20px;
+    padding-left: 0;
+  }
+  @media (min-width: $breakpoint-sm) {
+    max-width: 960px;
+  }
+  @media (min-width: $breakpoint-md) {
+    max-width: 1280px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    max-width: 1650px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    max-width: 97%;
+  }
+}
+
+.search-input {
+  background-color: $light-color-900;
+  border-radius: 30px;
+  width: 390px;
+  height: 51px;
+  gap: 0px !important;
+  padding: 0 10px;
+  .search-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color-900;
+    cursor: pointer;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  input {
+    padding: 10px 15px;
+    color: $dark-color-900;
+    flex: 1;
+    font-size: 16px;
+    &::placeholder {
+      color: $grey-color-800;
+    }
+  }
+}
+
+.custom-checkbox {
+  position: relative;
+  width: 50px;
+  height: 25px;
+
+  // Hide the actual checkbox
+  .switch-checkbox {
+    display: none;
+  }
+
+  // Style the label to create the switch appearance
+  .switch-label {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    background-color: #a6b9a9;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.2s ease-in-out;
+
+    // Inner circle for the switch toggle
+    &:before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      width: 21px;
+      height: 21px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  // When the checkbox is checked, move the toggle circle
+  .switch-checkbox:checked + .switch-label {
+    background-color: #68b168;
+
+    &:before {
+      transform: translateX(25px); // Move the toggle circle to the right
+    }
+  }
+}
+
+.drop-down-box {
+  width: 100%;
+  justify-content: flex-end;
+  .dropdown-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: max-content;
+    height: 66px;
+    font-size: 14px;
+    .dropdown-button {
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      .selected-option {
+        color: #4caf50;
+        font-weight: bold;
+      }
+
+      .arrow {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .dropdown-item {
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+
+        &.active {
+          color: #4caf50;
+          font-weight: bold;
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.overlay {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

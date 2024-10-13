@@ -1,0 +1,80 @@
+%flex-column-centered {
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header {
+  height: 98px;
+  background-color: $dark-color-900;
+  align-items: center;
+  justify-items: space-between;
+  color: $light-color-900;
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include respond-to(xs) {
+      flex-direction: row-reverse;
+    }
+
+    @include respond-to(lg) {
+      flex-direction: row;
+    }
+
+    div {
+      gap: 48px;
+      div {
+        .logo-icon {
+          @include respond-to(xs) {
+            width: 70px;
+            height: 70px;
+          }
+
+          @include respond-to(lg) {
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+    }
+    .nav-links {
+      gap: 58px;
+      div {
+        a {
+          @extend %flex-column-centered;
+        }
+        .avatar {
+          @include respond-to(xs) {
+            display: none;
+          }
+
+          @include respond-to(lg) {
+            display: flex;
+          }
+        }
+        .profile-btn {
+          @include respond-to(xs) {
+            display: flex;
+          }
+
+          @include respond-to(lg) {
+            display: none;
+          }
+        }
+      }
+      ul {
+        gap: 58px;
+        li {
+          a {
+            @extend %flex-column-centered;
+          }
+        }
+      }
+    }
+  }
+}

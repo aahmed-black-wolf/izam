@@ -1,0 +1,19 @@
+.list-links-media {
+  @include respond-to(xs) {
+    display: none;
+  }
+
+  @include respond-to(lg) {
+    display: flex;
+  }
+}
+
+.search-input-media {
+  @include respond-to(xs) {
+    display: none;
+  }
+
+  @include respond-to(lg) {
+    display: flex;
+  }
+}

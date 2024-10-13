@@ -1,0 +1,127 @@
+.side-menu {
+  background-color: $light-color-900;
+  height: 100vh;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  background-color: $light-color-900;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  &.open {
+    left: 0;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  .user-details {
+    flex-grow: 1;
+
+    .user-name {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .user-role {
+      display: block;
+      font-size: 14px;
+      color: $grey-color-800;
+    }
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  li {
+    margin-bottom: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 16px;
+      color: $dark-color-900;
+      font-weight: 500;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+      }
+
+      &:hover {
+        color: $secondary-color-900;
+      }
+    }
+
+    .notification-badge {
+      background-color: $error-color-900;
+      color: $light-color-900;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      margin-left: auto;
+    }
+  }
+}
+
+.menu-settings {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+
+  li {
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      color: $dark-color-900;
+
+      &:hover {
+        color: $secondary-color-900;
+      }
+    }
+  }
+}
+
+.logout-link {
+  color: $error-color-900;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  align-self: flex-start;
+
+  &:hover {
+    color: $dark-color-900;
+  }
+}
