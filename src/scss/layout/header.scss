@@ -28,19 +28,6 @@
 
     div {
       gap: 48px;
-      div {
-        .logo-icon {
-          @include respond-to(xs) {
-            width: 70px;
-            height: 70px;
-          }
-
-          @include respond-to(lg) {
-            width: auto;
-            height: auto;
-          }
-        }
-      }
     }
     .nav-links {
       gap: 58px;
