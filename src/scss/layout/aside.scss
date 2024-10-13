@@ -1,0 +1,128 @@
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 250px;
+  transition: transform 0.3s ease;
+  @include respond-to(xs) {
+    padding: 14px 0px;
+  }
+
+  @include respond-to(lg) {
+    padding: 14px;
+  }
+  @include respond-to(xs) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+    transform: translateX(100%);
+  }
+
+  @include respond-to(lg) {
+    position: relative;
+    transform: translateX(0%);
+  }
+
+  &.open {
+    transform: translateX(0); // Show when open
+  }
+}
+
+.aside-header {
+  padding-inline-start: 10px;
+  font-weight: 500;
+  font-size: 21px;
+  margin-bottom: 20px;
+  .aside-close-btn {
+    @include respond-to(sm) {
+      display: block;
+    }
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+}
+
+.aside-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 10px;
+
+    a,
+    button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $light-color-800 !important;
+      padding: 15px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 21px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $grey-color-500;
+      }
+
+      .arrow {
+        font-size: 12px;
+      }
+    }
+
+    .submenu {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+
+      li {
+        margin: 5px 0;
+        a {
+          padding: 10px;
+          display: block;
+          font-size: 14px;
+          text-decoration: none;
+          background: transparent !important;
+          &:hover {
+            background-color: #f1f1f1 !important;
+          }
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.aside-toggle-btn {
+  display: none;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $grey-color-900 !important;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 60px;
+  @include respond-to(sm) {
+    display: block;
+  }
+  @include respond-to(lg) {
+    display: none !important;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}

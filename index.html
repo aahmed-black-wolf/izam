@@ -1,85 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic meta tags -->
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="iZAM platform for finding jobs and connecting with employers."
+    />
+    <meta name="keywords" content="Jobs, Employers, UX/UI Designer, iZAM" />
+    <meta name="author" content="iZAM Team" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>iZAM</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./src/dist/css/index.css" />
+
+    <!-- Google Fonts preconnection and link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./public/favicon/favicon-48x48.png"
+      sizes="48x48"
+    />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./public/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./public/favicon/site.webmanifest" />
+    <!-- Page title -->
+    <title>iZAM - Your Job Search Platform</title>
   </head>
+
   <body>
+    <!-- Header Section -->
     <header class="header flex">
-      <nav class="nav container">
+      <nav class="nav container" aria-label="Main Navigation">
         <div class="flex">
           <div>
-            <a href="#">
-              <img src="./public/logo.svg" alt="Logo" />
+            <!-- Logo link -->
+            <a href="#" aria-label="Home">
+              <img class="logo-icon" src="./public/logo.svg" alt="iZAM Logo" />
             </a>
           </div>
-          <div class="search-input flex">
-            <div class="search-icon">
-              <img src="./public/icons/search.svg" alt="search" />
-            </div>
+
+          <!-- Search input section -->
+          <div class="search-input search-input-media flex">
+            <button
+              class="search-icon button-animation"
+              aria-label="Search Button"
+            >
+              <img src="./public/icons/search.svg" alt="Search Icon" />
+            </button>
             <input
               type="search"
-              placeholder="Search by name , job title..."
-              aria-label="Search"
+              placeholder="Search by name, job title..."
+              aria-label="Search Input"
               autocomplete="off"
               role="searchbox"
-              style="
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-              "
+              style="appearance: none"
             />
           </div>
         </div>
-        <div class="flex nav-links">
-          <ul class="flex list-links-media">
-            <li>
-              <a href="#">
-                <img src="./public/icons/home.svg" alt="home" />
-                Home</a
-              >
-            </li>
-            <li>
-              <a href="#">
-                <img src="./public/icons/work.svg" alt="work" />
-                Jobs</a
-              >
-            </li>
-            <li>
-              <a href="#">
-                <img src="./public/icons/users.svg" alt="users" />
 
+        <!-- Navigation Links -->
+        <div class="flex nav-links">
+          <ul class="flex list-links-media" role="menu">
+            <!-- Home link -->
+            <li role="menuitem">
+              <a href="#home" aria-label="Home">
+                <img src="./public/icons/home.svg" alt="Home Icon" /> Home</a
+              >
+            </li>
+
+            <!-- Jobs link -->
+            <li role="menuitem">
+              <a href="#Jobs" aria-label="Jobs">
+                <img src="./public/icons/work.svg" alt="Jobs Icon" /> Jobs</a
+              >
+            </li>
+
+            <!-- Employers link -->
+            <li role="menuitem">
+              <a href="#Employers" aria-label="Employers">
+                <img src="./public/icons/users.svg" alt="Employers Icon" />
                 Employers</a
               >
             </li>
-            <li><div class="h-divider"></div></li>
-            <li>
-              <a href="#">
-                <img src="./public/icons/notification.svg" alt="notification" />
+
+            <!-- Divider -->
+            <li aria-hidden="true"><div class="v-divider"></div></li>
+
+            <!-- Notifications link -->
+            <li role="menuitem">
+              <a href="#Notification" aria-label="Notifications">
+                <img
+                  src="./public/icons/notification.svg"
+                  alt="Notification Icon"
+                />
                 Notification</a
               >
             </li>
-            <li>
-              <a href="#">
-                <img src="./public/icons/messages.svg" alt="messages" />
+
+            <!-- Messages link -->
+            <li role="menuitem">
+              <a href="#Messages" aria-label="Messages">
+                <img src="./public/icons/messages.svg" alt="Messages Icon" />
                 Messages</a
               >
             </li>
           </ul>
+
+          <!-- Profile Section -->
           <div>
-            <a href="#">
-              <img src="./public/icons/aftar.svg" alt="messages" />
+            <a href="#Profile" class="avatar" aria-label="Profile">
+              <img src="./public/icons/avatar.svg" alt="Profile Avatar" />
               Profile
             </a>
+
+            <!-- Profile button -->
+            <button
+              class="button-animation profile-btn button-bg-transparent"
+              aria-label="Profile Menu"
+            >
+              <img src="./public/icons/profile.svg" alt="Profile Menu Icon" />
+            </button>
           </div>
         </div>
       </nav>
     </header>
-    <section>
-      <aside></aside>
-      <div></div>
+
+    <!-- Side Menu -->
+    <menu class="side-menu" aria-label="Side Menu">
+      <!-- User Info Section -->
+      <div class="user-info" aria-label="User Information">
+        <img
+          class="avatar"
+          src="./public/assets/profile.png"
+          alt="User Avatar"
+        />
+        <div class="user-details">
+          <span class="user-name">Ahmed Amaar</span>
+          <span class="user-role">UX UI designer</span>
+        </div>
+
+        <!-- Menu Toggle Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <img src="./public/icons/arrow-right.svg" alt="Menu Toggle Icon" />
+        </button>
+      </div>
+      <div class="h-divider"></div>
+
+      <!-- Menu Links -->
+      <ul class="menu-links" role="menu">
+        <!-- Home Link -->
+        <li role="menuitem">
+          <a href="#home" aria-label="Home Link">
+            <img src="./public/icons/sm/home-sm.svg" alt="Home Icon" /> Home
+          </a>
+        </li>
+
+        <!-- Jobs Link -->
+        <li role="menuitem">
+          <a href="#jobs" aria-label="Jobs Link">
+            <img src="./public/icons/sm/work-sm.svg" alt="Jobs Icon" /> Jobs
+          </a>
+        </li>
+
+        <!-- Employers Link -->
+        <li role="menuitem">
+          <a href="#employers" aria-label="Employers Link">
+            <img src="./public/icons/sm/users-sm.svg" alt="Employers Icon" />
+            Employers
+          </a>
+        </li>
+
+        <!-- Notifications Link -->
+        <li role="menuitem">
+          <a href="#notifications" aria-label="Notifications Link">
+            <img
+              src="./public/icons/sm/notification-sm.svg"
+              alt="Notifications Icon"
+            />
+            Notifications
+          </a>
+        </li>
+
+        <!-- Messages Link -->
+        <li role="menuitem">
+          <a href="#messages" aria-label="Messages Link">
+            <img src="./public/icons/sm/messages-sm.svg" alt="Messages Icon" />
+            Messaging
+          </a>
+        </li>
+      </ul>
+
+      <!-- Settings and Logout Section -->
+      <div class="h-divider"></div>
+
+      <ul class="menu-settings" role="menu">
+        <!-- Settings Link -->
+        <li role="menuitem">
+          <a href="#settings" aria-label="Settings Link">
+            Setting and privacy
+          </a>
+        </li>
+
+        <!-- Language Link -->
+        <li role="menuitem">
+          <a href="#language" aria-label="Language Settings"> Language </a>
+        </li>
+
+        <!-- Help Link -->
+        <li role="menuitem">
+          <a href="#help" aria-label="Help Link"> Help </a>
+        </li>
+      </ul>
+      <div class="h-divider"></div>
+
+      <!-- Logout Link -->
+      <a href="#logout" class="logout-link" aria-label="Logout">Logout</a>
+    </menu>
+
+    <!-- Main Job Section -->
+    <section class="flex jobs-section">
+      <!-- Aside Menu for Small Screens -->
+      <aside aria-label="Jobs Filters and Navigation">
+        <div>
+          <div class="aside-header flex">
+            <div style="gap: 2px; align-items: center" class="flex">
+              <!-- Close Button for Menu -->
+              <button
+                class="button-animation aside-close-btn button-bg-transparent"
+                aria-label="Close Menu"
+              >
+                <img src="./public/icons/arrow-back.svg" alt="Back Icon" />
+              </button>
+              <span>Menu</span>
+            </div>
+            <!-- Settings Button -->
+            <button
+              class="button-animation button-bg-transparent"
+              aria-label="Settings"
+            >
+              <img src="./public/icons/setting.svg" alt="Settings Icon" />
+            </button>
+          </div>
+          <div class="h-divider"></div>
+        </div>
+
+        <!-- Aside Links -->
+        <ul class="aside-links" role="menu">
+          <!-- Dashboard Link -->
+          <li role="menuitem">
+            <a
+              class="button-animation button-rest"
+              href="#dashboard"
+              aria-label="Dashboard Link"
+              >Dashboard</a
+            >
+          </li>
+
+          <!-- Job Applications Dropdown -->
+          <li role="menuitem">
+            <button
+              class="button-animation button-rest"
+              aria-haspopup="true"
+              data-toggle="job-application"
+              aria-label="Job Applications"
+            >
+              Job applications
+              <span class="arrow"
+                ><img src="./public/icons/arrow-down.svg" alt="Expand Icon"
+              /></span>
+            </button>
+
+            <!-- Job Application Submenu -->
+            <ul id="job-application" class="submenu hidden">
+              <li role="menuitem"><a href="#john-doe">John Doe</a></li>
+              <li role="menuitem"><a href="#james-bond">James Bond</a></li>
+            </ul>
+          </li>
+
+          <!-- Qualifications Dropdown -->
+          <li role="menuitem">
+            <button
+              class="button-animation button-rest"
+              aria-haspopup="true"
+              data-toggle="qualifications"
+              aria-label="Qualifications"
+            >
+              Qualifications
+              <span class="arrow"
+                ><img src="./public/icons/arrow-down.svg" alt="Expand Icon"
+              /></span>
+            </button>
+
+            <!-- Qualifications Submenu -->
+            <ul id="qualifications" class="submenu hidden">
+              <li role="menuitem">
+                <a href="#qualification1">Qualification 1</a>
+              </li>
+              <li role="menuitem">
+                <a href="#qualification2">Qualification 2</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- About Link -->
+          <li role="menuitem">
+            <a
+              class="button-animation button-rest"
+              href="#about"
+              aria-label="About Link"
+              >About</a
+            >
+          </li>
+
+          <!-- Contact Link -->
+          <li role="menuitem">
+            <a
+              class="button-animation button-rest"
+              href="#contact"
+              aria-label="Contact Link"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Job Listings Section -->
+      <div class="job-section-side">
+        <!-- Sorting Dropdown -->
+        <div class="flex drop-down-box">
+          <div class="dropdown-container">
+            <button
+              class="dropdown-button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Sort Jobs"
+            >
+              Sorting by: <span class="selected-option">Top match</span>
+              <span class="arrow"
+                ><img
+                  src="./public/icons/arrow-down.svg"
+                  alt="Expand Sort Options"
+              /></span>
+            </button>
+
+            <!-- Sort Options -->
+            <ul class="dropdown-menu hidden">
+              <li class="dropdown-item" data-value="Top match">Top match</li>
+              <li class="dropdown-item" data-value="Newest">Newest</li>
+              <li class="dropdown-item" data-value="Latest">Latest</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job Header Section -->
+        <div class="header-container">
+          <div class="header">
+            <!-- Job Details -->
+            <div class="label-details-section">
+              <span>Ui Designer in Egypt</span>
+              <span class="text-sm">70 job positions</span>
+            </div>
+
+            <!-- Set Alert Section -->
+            <div class="set-alert">
+              <span>Set alert</span>
+              <div class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  id="alert-switch"
+                  class="switch-checkbox"
+                  aria-label="Job Alert Toggle"
+                />
+                <label for="alert-switch" class="switch-label"></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle Button for Aside Menu on Small Screens -->
+          <button
+            class="aside-toggle-btn button-animation button-bg-transparent"
+            aria-label="Toggle Aside Menu"
+          >
+            <img src="./public/icons/list.svg" alt="Toggle Aside Menu Icon" />
+          </button>
+        </div>
+
+        <!-- Job Listings -->
+        <div class="job-list">
+          <!-- Job Cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="pagination" aria-label="Pagination">
+          <button
+            class="page-btn button-rest button-animation"
+            aria-label="Previous Page"
+          >
+            &lt;
+          </button>
+          <button
+            class="page-btn button-rest button-animation"
+            aria-label="Page 1"
+          >
+            1
+          </button>
+          <button class="page-btn button-animation active" aria-label="Page 2">
+            2
+          </button>
+          <button
+            class="page-btn button-rest button-animation"
+            aria-label="Page 3"
+          >
+            3
+          </button>
+          <button
+            class="page-btn button-rest button-animation"
+            aria-label="Next Page"
+          >
+            &gt;
+          </button>
+        </div>
+      </div>
     </section>
+
+    <!-- JavaScript Files -->
+    <script src="./src/dist/js/index.js"></script>
   </body>
 </html>
