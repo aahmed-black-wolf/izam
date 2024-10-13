@@ -1,6 +1,4 @@
-Here is a draft for the README file based on the provided files and task description:
 
----
 
 # iZAM Responsive Web Page
 
