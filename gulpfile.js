@@ -5,17 +5,17 @@ import terser from 'gulp-terser';
 // Task for minifying JavaScript
 gulp.task("minify-js", function () {
   return gulp
-    .src("./src/dist/js/*.js") // Source JS files
+    .src("./public/dist/js/*.js") // Source JS files
     .pipe(terser()) // Minify
-    .pipe(gulp.dest("./src/public/dist/js")); // Output to destination
+    .pipe(gulp.dest("./public/dist/js")); // Output to destination
 });
 
 // Task for minifying CSS
 gulp.task("minify-css", function () {
   return gulp
-    .src("./src/dist/css/*.css") // Source CSS files
+    .src("./public/dist/css/*.css") // Source CSS files
     .pipe(cleanCSS({ compatibility: "ie8" })) // Minify
-    .pipe(gulp.dest("./src/public/dist/css")); // Output to destination
+    .pipe(gulp.dest("./public/dist/css")); // Output to destination
 });
 
 // Default task to run both

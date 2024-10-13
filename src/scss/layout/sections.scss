@@ -135,6 +135,7 @@
   }
 
   .job-list {
+    min-height: 100%;
     .active-card {
       background-color: $light-color-700 !important;
       border: 1px solid $secondary-color-900;
